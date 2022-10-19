@@ -1,15 +1,20 @@
 <h1>Angular Material Date Picker</h1>
-<mat-form-field class="example-form-field" appearance="fill">
-    <mat-label>First campaign</mat-label>
+<mat-form-field class="book-form-field" appearance="fill">
+    <mat-label>Book your room</mat-label>
     <mat-date-range-input
       [formGroup]="bookForm"
-      [rangePicker]="campaignOnePicker"
+      [rangePicker]="bookDatePicker"
       [comparisonStart]="bookForm.value.start"
       [comparisonEnd]="bookForm.value.end">
       <input matStartDate placeholder="Start date" formControlName="start">
       <input matEndDate placeholder="End date" formControlName="end">
     </mat-date-range-input>
     <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-    <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+    <mat-datepicker-toggle matSuffix [for]="bookDatePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #bookDatePicker>
+      <mat-date-range-picker-actions>
+        <button mat-button matDateRangePickerCancel color="warn">Cancel</button>
+        <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+      </mat-date-range-picker-actions>
+    </mat-date-range-picker>
 </mat-form-field>
